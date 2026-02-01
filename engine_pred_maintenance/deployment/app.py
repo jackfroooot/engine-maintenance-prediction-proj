@@ -38,7 +38,7 @@ input_data = pd.DataFrame([{
 # Predict button
 if st.button("Predict Maintenance"):
     prediction = model.predict_proba(input_data)[:, 1][0]
-    if prediction >= 0.80: risk = "🔴 High Risk"
+    if prediction >= 0.85: risk = "🔴 High Risk"
     elif prediction >= predict_threshold:  risk = "🟠 Medium Risk"
     else:  risk = "🟢 Low Risk"
 
